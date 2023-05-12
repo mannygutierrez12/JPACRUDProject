@@ -32,8 +32,12 @@ ext {
 
 // define project specific dependencies
 dependencies {
+
+  
   implementation "mysql:mysql-connector-java:$mySqlConnectorVersion"
   implementation "org.apache.logging.log4j:log4j-core:$log4jVersion"
+  
+ 
   
   implementation "org.hibernate:hibernate-core:$hibernateVersion"
   implementation "org.hibernate:hibernate-c3p0:$hibernateVersion"
