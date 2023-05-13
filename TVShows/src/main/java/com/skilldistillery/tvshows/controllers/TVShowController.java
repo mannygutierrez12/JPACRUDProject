@@ -32,7 +32,7 @@ public class TVShowController {
 	public String getShow(Integer id, Model model) {
 		TVShow show = tvShow.findById(id);
 		model.addAttribute("show", show);
-		return "film/show";
+		return "show";
 	}
 
 }

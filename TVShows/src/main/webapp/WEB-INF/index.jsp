@@ -10,7 +10,7 @@
 <h1>Welcome to the page</h1>
 
 <form action="getShow.do" method="GET">
-		Film ID: <input type="text" name="id" /> <input type="submit"
+		Show ID: <input type="text" name="id" /> <input type="submit"
 			value="Submit" />
 </form>
 </body>
