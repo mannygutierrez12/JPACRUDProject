@@ -58,9 +58,7 @@
     </div>
     
     <div class="option-box">
-        <form action="updateShowForm.do" method="get">
-            <label for="updateId">Enter ID:</label>
-            <input type="number" id="updateId" name="id" required>
+        <form action="updateShow.do" method="get">
             <input type="submit" value="Update Show">
         </form>
     </div>

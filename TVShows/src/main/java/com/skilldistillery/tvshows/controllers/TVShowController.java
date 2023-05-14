@@ -48,6 +48,17 @@ public class TVShowController {
 		tvShow.add(show);
 		return "redirect:index.do";
 	}
+	
+	@RequestMapping(path="updateShow.do")
+	public String updateShow() {
+		return "shows/update";
+	}
+	
+	@RequestMapping(path="updateShowForm.do", method=RequestMethod.POST)
+	public String updateShow(TVShow show) {
+		tvShow.update(show);
+		return "show/update";
+	}
 
 	
 	@RequestMapping(path="deleteShow.do", method=RequestMethod.POST)
@@ -56,11 +67,7 @@ public class TVShowController {
 		return "shows/delete";
 	}
 	
-	@RequestMapping(path="updateShow.do", method=RequestMethod.POST)
-	public String updateShow(TVShow show) {
-		tvShow.update(show);
-		return "show/update";
-	}
+	
 	
 
 }
