@@ -60,7 +60,7 @@
 <body>
     <h1>Find TV Show by ID</h1>
     <div class="option-box">
-        <form action="getShow.do" method="get">
+        <form action="findShowById.do" method="get">
             <label for="showId">Enter ID:</label>
             <input type="number" id="showId" name="id" required><br>
             <input type="submit" value="Find" class="btn btn-primary">
@@ -99,7 +99,7 @@
         </c:when>
         <c:otherwise>
             <p>The show was not found.</p>
-            <a href="addShowForm.do">Add New Show</a>
+            <a href="addShow.do">Add New Show</a>
         </c:otherwise>
     </c:choose>
 </body>

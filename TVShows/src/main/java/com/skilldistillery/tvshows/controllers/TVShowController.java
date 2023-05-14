@@ -37,6 +37,17 @@ public class TVShowController {
 	    model.addAttribute("shows", shows);
 	    return "shows/listallshows";
 	}
+	
+	@RequestMapping(path="addShow.do")
+	public String addShow() {
+		return "shows/add";
+	}
+	
+	@RequestMapping(path="addShowForm.do", method=RequestMethod.POST)
+	public String addShow(TVShow show) {
+		tvShow.add(show);
+		return "redirect:index.do";
+	}
 
 	
 	@RequestMapping(path="deleteShow.do", method=RequestMethod.POST)
@@ -51,9 +62,5 @@ public class TVShowController {
 		return "show/update";
 	}
 	
-	@RequestMapping(path="addShow.do", method=RequestMethod.POST)
-	public String addShow(TVShow show) {
-		tvShow.add(show);
-		return "show/add";
-	}
+
 }

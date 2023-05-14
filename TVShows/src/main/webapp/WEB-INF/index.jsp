@@ -52,7 +52,7 @@
     </div>
     
     <div class="option-box">
-        <form action="addShowForm.do" method="get">
+        <form action="addShow.do" method="get">
             <input type="submit" value="Add New Show">
         </form>
     </div>

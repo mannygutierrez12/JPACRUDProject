@@ -29,7 +29,7 @@
 <body>
     <h1>Add TV Show</h1>
     <div class="option-box">
-        <form action="addShow.do" method="post">
+        <form action="addShowForm.do" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
             
