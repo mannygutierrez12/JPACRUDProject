@@ -59,9 +59,14 @@ public class TVShowController {
 		tvShow.update(show);
 		return "show/update";
 	}
+	
+	@RequestMapping(path="deleteShow.do")
+	public String deleteShow() {
+		return "shows/delete";
+	}
 
 	
-	@RequestMapping(path="deleteShow.do", method=RequestMethod.POST)
+	@RequestMapping(path="deleteShowForm.do", method=RequestMethod.POST)
 	public String deleteShow(Integer id) {
 		tvShow.delete(id);
 		return "shows/delete";

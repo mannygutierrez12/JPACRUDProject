@@ -64,7 +64,7 @@
     </div>
     
     <div class="option-box">
-        <form action="deleteShowForm.do" method="get">
+        <form action="deleteShow.do" method="get">
             <input type="submit" value="Delete Show">
         </form>
     </div>
