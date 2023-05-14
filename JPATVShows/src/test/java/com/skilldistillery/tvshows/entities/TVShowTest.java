@@ -46,6 +46,7 @@ class TVShowTest {
 	void test() {
 		assertNotNull(tvShow);
 		assertEquals("South Park", tvShow.getName());
+		assertEquals("braylin", tvShow.getRecommendedBy());
 	}
 
 }
