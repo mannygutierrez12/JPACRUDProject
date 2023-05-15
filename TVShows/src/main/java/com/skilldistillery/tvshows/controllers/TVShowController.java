@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.tvshows.data.TVShowDAO;
 import com.skilldistillery.tvshows.entities.TVShow;
@@ -21,6 +22,11 @@ public class TVShowController {
 	@RequestMapping(path={"/","index.do"})
 	public String index() {
 	  return "index";
+	}
+	
+	@RequestMapping(path="error.do")
+	public String error() {
+	  return "shows/error";
 	}
 	
 
@@ -54,11 +60,41 @@ public class TVShowController {
 		return "shows/update";
 	}
 	
-	@RequestMapping(path="updateShowForm.do", method=RequestMethod.POST)
-	public String updateShow(TVShow show) {
-		tvShow.update(show);
-		return "show/update";
-	}
+	 @RequestMapping(path = "updateShowForm.do", method = RequestMethod.POST)
+	    public String updateShowForm(
+	            @RequestParam("showId") int showId,
+	            @RequestParam("name") String name,
+	            @RequestParam("length") int length,
+	            @RequestParam("numberOfSeasons") int numberOfSeasons,
+	            @RequestParam("category") String category,
+	            @RequestParam("whereToStream") String whereToStream,
+	            @RequestParam("recommendedBy") String recommendedBy,
+	            Model model) {
+
+	       
+	        TVShow existingShow = tvShow.findById(showId);
+
+	        if (existingShow == null) {
+	           
+	            return "error.do";
+	        }
+
+	        
+	        existingShow.setName(name);
+	        existingShow.setLength(length);
+	        existingShow.setNumberOfSeasons(numberOfSeasons);
+	        existingShow.setCategory(category);
+	        existingShow.setWhereToStream(whereToStream);
+	        existingShow.setRecommendedBy(recommendedBy);
+
+	       
+	        tvShow.update(existingShow);
+
+	        return "index.do"; 
+	    }
+	
+	
+
 	
 	@RequestMapping(path="deleteShow.do")
 	public String deleteShow() {

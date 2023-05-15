@@ -29,7 +29,7 @@
 <body>
     <h1>Update TV Show</h1>
     <div class="option-box">
-        <form action="updateShow.do" method="post">
+        <form action="updateShowForm.do" method="post">
         
         	<label for="name">ID:</label>
             <input type="text" name="showId" required><br>
