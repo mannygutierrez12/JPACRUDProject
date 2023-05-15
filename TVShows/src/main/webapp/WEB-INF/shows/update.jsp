@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title>Login</title>
+    <title>Update TV Show</title>
     <style>
         body {
             background-color: lightblue;
@@ -13,47 +13,48 @@
             margin: 0;
         }
         
-        .login-box {
+        .option-box {
             background-color: white;
             padding: 20px;
-            border-radius: 5px;
-            width: 300px;
-            text-align: center;
-        }
-        
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            width: 300px;
         }
         
-        .submit-btn {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        .submit-btn:hover {
-            background-color: #45a049;
+        form {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h2>Login</h2>
-        <form action="login.do" method="post">
-            <input type="text" name="username" placeholder="Username" required><br>
-            <input type="password" name="password" placeholder="Password" required><br>
-            <input type="submit" value="Login" class="submit-btn">
+    <h1>Update TV Show</h1>
+    <div class="option-box">
+        <form action="updateShow.do" method="post">
+        
+        	<label for="name">ID:</label>
+            <input type="text" name="showId" required><br>
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            
+            <label for="length">Length (in mins):</label>
+            <input type="number" id="length" name="length"><br>
+            
+            <label for="numberOfSeasons">Number of Seasons:</label>
+            <input type="number" id="numberOfSeasons" name="numberOfSeasons"><br>
+            
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category"><br>
+            
+            <label for="whereToStream">Where to Stream:</label>
+            <input type="text" id="whereToStream" name="whereToStream" required><br>
+            
+            <label for="recommendedBy">Recommended By:</label>
+            <input type="text" id="recommendedBy" name="recommendedBy" required><br>
+            
+            <input type="submit" value="Update">
         </form>
     </div>
+    <a href="index.do">Back to Home</a>
 </body>
 </html>
