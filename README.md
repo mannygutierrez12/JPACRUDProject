@@ -20,6 +20,7 @@ To address this issue, an easy-to-use application has been developed that allows
 - Zoom
 - CodePen
 - Stack Overflow
+- JUNIT Testing
 
 ## How to Improve this Project
 
