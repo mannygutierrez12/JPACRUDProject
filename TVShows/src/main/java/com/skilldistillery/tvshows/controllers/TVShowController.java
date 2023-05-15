@@ -22,6 +22,7 @@ public class TVShowController {
 	public String index() {
 		return "index";
 	}
+	
 
 	@RequestMapping(path = "error.do")
 	public String error() {

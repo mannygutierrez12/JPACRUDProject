@@ -33,14 +33,28 @@
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
             
-            <label for="length">Length (min):</label>
-            <input type="number" id="length" name="length" required><br>
+            <label for="length">Length (in Minutes):</label>
+            <input type="number" id="length" name="length" min="1" required><br>
+
             
             <label for="numberOfSeasons">Number of Seasons:</label>
-            <input type="number" id="numberOfSeasons" name="numberOfSeasons" required><br>
+            <input type="number" id="numberOfSeasons" name="numberOfSeasons" min="1" required><br>
             
             <label for="category">Category:</label>
-            <input type="text" id="category" name="category" required><br>
+				<select id="category" name="category" required>
+				   <option value="Documentary">Documentary</option>
+				    <option value="Cartoons">Cartoons</option>
+				    <option value="Fantasy">Fantasy</option>
+				    <option value="War">War</option>
+				    <option value="Drama">Drama</option>
+				    <option value="History">History</option>
+				    <option value="Comedy">Comedy</option>
+				    <option value="Suspense">Suspense</option>
+				    <option value="Crime">Crime</option>
+				    <option value="Horror">Horror</option>
+				    <option value="Documentary">Documentary</option>
+				    <option value="Other">Other</option>
+				</select><br>
             
             <label for="whereToStream">Where to Stream:</label>
             <input type="text" id="whereToStream" name="whereToStream" required><br>

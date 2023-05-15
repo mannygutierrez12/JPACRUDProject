@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>All TV Shows</title>
+    <title>Delete a Show</title>
     <style>
         body {
             background-color: lightblue;
@@ -11,7 +11,11 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            margin: 0;
+            margin: 70;
+        }
+        
+        h1 {
+        	margin-top: 20px;
         }
         
         table {

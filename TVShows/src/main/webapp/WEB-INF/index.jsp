@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to TV Show App</h1>
+    <h1>TV Show Recommendations App</h1>
     
      <div class="option-box">
         <form action="findShowById.do" method="get">
