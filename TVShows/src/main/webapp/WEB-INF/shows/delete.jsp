@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Login</title>
+    <title>All TV Shows</title>
     <style>
         body {
             background-color: lightblue;
@@ -13,47 +14,72 @@
             margin: 0;
         }
         
-        .login-box {
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px;
             background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            width: 300px;
-            text-align: center;
-        }
-        
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
             border: 1px solid #ccc;
         }
         
-        .submit-btn {
-            width: 100%;
+        th, td {
             padding: 10px;
-            border-radius: 5px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
         }
         
-        .submit-btn:hover {
-            background-color: #45a049;
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        a {
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h2>Login</h2>
-        <form action="login.do" method="post">
-            <input type="text" name="username" placeholder="Username" required><br>
-            <input type="password" name="password" placeholder="Password" required><br>
-            <input type="submit" value="Login" class="submit-btn">
-        </form>
-    </div>
+    <h1>All TV Shows</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Length (min)</th>
+                <th>Number of Seasons</th>
+                <th>Category</th>
+                <th>Where to Stream</th>
+                <th>Recommended By</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach items="${shows}" var="show">
+                <tr>
+                    <td>${show.id}</td>
+                    <td>${show.name}</td>
+                    <td>${show.length}</td>
+                    <td>${show.numberOfSeasons}</td>
+                    <td>${show.category}</td>
+                    <td>${show.whereToStream}</td>
+                    <td>${show.recommendedBy}</td>
+                     <td>
+                        <form action="deleteShowForm.do" method="post">
+                            <input type="hidden" name="showId" value="${show.id}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+    <a href="index.do">Back to Home</a>
 </body>
 </html>

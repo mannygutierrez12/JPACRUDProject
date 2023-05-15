@@ -68,13 +68,6 @@
             <input type="submit" value="Delete Show">
         </form>
     </div>
-    
-    <div class="option-box">
-        <form action="error.do" method="get">
-            <input type="submit" value="Error page">
-        </form>
-    </div>
-    
    
 </body>
 </html>
