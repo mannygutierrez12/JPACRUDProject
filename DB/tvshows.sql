@@ -24,6 +24,10 @@ CREATE TABLE IF NOT EXISTS `tv_show` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `length` INT NULL,
+  `number_of_seasons` INT NULL,
+  `category` VARCHAR(45) NULL,
+  `where_to_stream` VARCHAR(45) NULL,
+  `recommended_by` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -43,7 +47,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `tvshowsdb`;
-INSERT INTO `tv_show` (`id`, `name`, `length`) VALUES (1, 'South Park', 22);
+INSERT INTO `tv_show` (`id`, `name`, `length`, `number_of_seasons`, `category`, `where_to_stream`, `recommended_by`) VALUES (1, 'South Park', 22, 26, 'Cartoons', 'HBO', 'Braylin');
 
 COMMIT;
 
